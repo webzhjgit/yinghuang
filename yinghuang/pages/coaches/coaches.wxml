@@ -1,0 +1,10 @@
+
+<view class="container">
+  <view class="coach-card" wx:for="{{coal}}" bindlongtap="ContactCoachLongTap">
+      <view class="coach">
+          <image class="item-coach" src="{{item.cimg}}"/>
+          <view class="zan-font-12-bold">{{item.ctitle}}</view>
+      </view>
+      <text class="zan-font-10">{{item.cdesc}}</text>
+  </view>
+</view>

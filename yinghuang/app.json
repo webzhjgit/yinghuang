@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/mine/mine",
+    "pages/goods-details/goods-details",
+    "pages/video/video",
+    "pages/coaches/coaches"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "英皇健身房",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/nav/home-off.png",
+        "selectedIconPath": "images/nav/home-on.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "预约",
+        "iconPath": "images/nav/time-off.png",
+        "selectedIconPath": "images/nav/time-on.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "课程",
+        "iconPath": "images/nav/icon-list.png",
+        "selectedIconPath": "images/nav/icon-list-sel.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/nav/icon-weightlift.png",
+        "selectedIconPath": "images/nav/icon-weightlift-sel.png"
+      }
+    ]
+  }
+}

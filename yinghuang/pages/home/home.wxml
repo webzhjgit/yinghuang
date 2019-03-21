@@ -1,0 +1,88 @@
+<!-- 这里是首页 -->
+<view>
+  <!-- 轮播图 -->
+   <view class="slider">
+      <swiper autoplay="3000">
+          <swiper-item wx:for="{{car}}" wx:key="index">
+             <image src="{{item.cimg}}" mode='aspectFill' 
+          lazy-load=''></image>
+          </swiper-item>
+      </swiper>
+   </view>
+   <!-- 关于我们 --> 
+   <view class="zan-panel">
+      <view class="zan-cell">
+          <view class="zan-cell__bd">关于我们</view>
+          <view class="zan-cell__ft">
+              <view class="img-box">详细地址
+                 <image src="../../images/ico-addr-red.png" class="img"/>
+               </view>
+          </view>
+       </view>
+       <view class="zan-font-10">十年磨一剑，一直以来我们致力于做最贴心、最专业的健身房，您的满意是我们的福祉。。</view>
+       <view class="zan-font-10">李大力健身房携手健康与健美欢迎您的到来。   
+       </view>
+    </view>
+   <!-- 我们的环境 -->
+    <view class="zan-panel">
+        <view class="zan-cell zan-cell--access">
+           <view class="zan-cell__bd">我们的环境</view>
+              <view class="zan-cell__ft">
+                 <view class="img-box" bindtap="showvideo">实景视频展示
+                    <image src="../../images/video.png" class="imgvideo" />
+              </view>
+            </view>
+        </view>
+       <view class="envimg" wx:for="{{surr}}" wx:key="index">
+           <image src="{{item.cimg}}"></image>
+        </view>
+  </view>
+   <!-- 我们的教练 -->
+     <view class="zan-panel">
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd">我们的教练</view>
+      <view class="zan-cell__ft" bindtap="toAllCoachesTap">查看全部教练</view>
+    </view>
+   <view class="swiper-container">
+        <swiper class="swiper_box" bindchange="coachswiperchange">
+            <block wx:for="{{coach}}" wx:key="index">
+                <swiper-item>
+                  <view class="coach">
+                    <image class="swiper-item-coach" data-id="{{item.id}}" src="{{item.cimg}}"/>
+                    <view class="zan-font-12-bold">{{item.ctitle}}</view>
+                  </view>
+                  <text class="zan-font-10">{{item.cdesc}}</text>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+  </view>
+   <!-- 我们推荐的文章 -->
+     <view class="zan-panel articles">
+    <view class="zan-cell zan-cell--access">
+      <view class="zan-cell__bd">我们推荐的文章</view>
+      <view class="zan-cell__ft">查看更多</view>
+    </view>
+        <block wx:for="{{ article }}" wx:key="index">
+            <navigator url="/pages/home/home">
+            <view class="article__item">
+                <view class="article__thumb">
+                    <image class="article__image" src="{{ item.aimg }}"></image>
+                </view>
+                <view class="article__info">
+                    <view class="article__title article__title__large" background-image="url({{item.aimg}})">{{ item.atitle }}</view>
+                    <view class="article__desc">
+                        <text wx:if="{{ item.adesc }}" class="article__source">{{ item.adesc }}</text>
+                        <text class="article__time">{{ item.atime }}</text>
+                        <view class="article__count">
+                            <image class="article__icon" src="../../images/eye.png"></image>
+                            <text>{{ item.views }}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            </navigator>
+        </block>
+    </view>
+</view>
+

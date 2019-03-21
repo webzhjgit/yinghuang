@@ -1,0 +1,58 @@
+
+<!--appointment.wxml-->
+<view class="container">
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">上月明星教练</view>
+      <view class="zan-cell__ft">Star</view>
+    </view>
+        <block wx:for="{{ star }}" wx:key="index">
+            <!-- <navigator url="/pages/articles-detail/index?id={{item.id}}"> -->
+            <view class="article__item">
+                <view class="article__thumb">
+                    <image class="article__image" src="{{ item.cimg }}"></image>
+                </view>
+                <view class="article__info">
+                    <view class="article__title">
+                    <view class="article__title_font">{{ item.ctitle }}</view>
+                    <navigator url="/pages/logs/logs">
+                        <view class="appointBtn border-radius">
+                            <view class="appointFont">约TA</view>
+                        </view>
+                    </navigator>
+                    </view>
+                    <view class="article__desc">
+                        <text class="article__time">上月成功预约{{ item.nmb }}次</text>
+                    </view>
+                </view>
+            </view>
+            <!-- </navigator> -->
+        </block>
+    </view>
+    <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">教练们</view>
+      <view class="zan-cell__ft">Coaches</view>
+    </view>
+        <block wx:for="{{ stt }}" wx:key="index">
+            <view class="article__item">
+                <view class="article__thumb">
+                    <image class="article__image" src="{{ item.cimg }}"></image>
+                </view>
+                <view class="article__info">
+                    <view class="article__title">
+                    <view class="article__title_font">{{ item.ctitle }}</view>
+                    <navigator url="/pages/logs/logs">
+                        <view class="appointBtn border-radius">
+                            <view class="appointFont">约TA</view>
+                        </view>
+                    </navigator>
+                    </view>
+                    <view class="article__desc">
+                        <text class="article__time">{{ item.cdesc }}</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

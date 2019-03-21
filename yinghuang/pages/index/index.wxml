@@ -1,0 +1,37 @@
+
+<view class="container">
+   <view class="swiper-container">
+        <swiper class="swiper_box" 
+                    autoplay="3000" bindchange="swiperchange" >
+            <block wx:for="{{banner}}" wx:key="index">
+                <swiper-item>
+                    <image bindtap="tapBanner" data-idx="{{item.aid}}"   src="{{item.aimg}}" class="slide-image" width="750rpx" height="562.5rpx"/>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="dots">  
+            <block wx:for="{{banner}}" wx:key="index">  
+                <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>  
+            </block>  
+        </view>  
+   </view>
+   
+    <view class="type-container">
+        <scroll-view class="type-navbar" scroll-x="true" style="width: 100%">
+            <view class="type-box" wx:for-items="{{book}}" wx:key="index">
+                <view data-idx="{{item.aid}}" class="type-navbar-item {{activeCategoryId == item.aid ? 'type-item-on' : ''}}" bindtap="tabClick">
+                    {{item.atitle}}
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="goods-container">
+        <view class="goods-box" wx:for-items="{{bo}}" wx:key="index"  data-id="{{item.aid}}">
+           <view class="img-box">
+              <image src="{{item.aimg}}" class="image"/>
+           </view>
+           <view class="goods-title">{{item.atitle}}</view>
+        </view>
+    </view>
+    <view hidden="{{loadingMoreHidden ? true : false}}" class="no-more-goods">没有更多啦</view>
+</view>
